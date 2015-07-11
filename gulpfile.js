@@ -26,10 +26,12 @@ gulp.task("test", function(){
 });
 
 gulp.task("sass", function(){
-  return gulp.src("./client/styles/test.scss")
-    .pipe(gulp.dest(".client/styles"));
-    }));
-})
+  return gulp.src("./client/styles/styles.scss")
+    .pipe(sass({
+      errLogToConsole: true
+    }))
+    .pipe(gulp.dest("./client/styles"));
+  });
 
 gulp.task("watch", function(){
   gulp.watch(["./client/**/*/js", "./client/*.js"], ["lint"])
@@ -37,4 +39,4 @@ gulp.task("watch", function(){
 
 gulp.task("default", ["lint", "jade", "watch"], function(){
   "gulp says hi"
-})
+});
