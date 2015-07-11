@@ -26,7 +26,7 @@ gulp.task("test", function(){
 });
 
 gulp.task("sass", function(){
-  return gulp.src("./client/styles/styles.scss")
+  return gulp.src("./client/styles/style.scss")
     .pipe(sass({
       errLogToConsole: true
     }))
