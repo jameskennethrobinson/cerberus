@@ -1,6 +1,8 @@
 var gulp = require("gulp");
 var jade = require("gulp-jade");
+var sass = require("gulp-sass");
 var jshint = require("gulp-jshint");
+var jasmine = require("gulp-jasmine");
 
 gulp.task("lint", function(){
   return gulp.src("./client/**/*.js")
@@ -17,6 +19,17 @@ gulp.task("jade", function(){
     return file.base;
   }));
 });
+
+gulp.task("test", function(){
+  return gulp.src("./spec/test.js")
+    .pipe(jasmine())
+});
+
+gulp.task("sass", function(){
+  return gulp.src("./client/styles/test.scss")
+    .pipe(gulp.dest(".client/styles"));
+    }));
+})
 
 gulp.task("watch", function(){
   gulp.watch(["./client/**/*/js", "./client/*.js"], ["lint"])
