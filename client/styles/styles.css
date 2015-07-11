@@ -1,16 +1,3 @@
-Skip to content
-This repository
-Pull requests
-Issues
-Gist
- @jseiden
- Watch 1
-  Star 0
- Fork 4Insuperable-Arete/cerberus
- branch: master  cerberus/client/styles/style.css
-@JAFongJAFong an hour ago (init) Add AngularJS boilerplate, html, and css styles
-1 contributor
-RawBlameHistory     369 lines (329 sloc)  8.409 kB
 /* ==========================================================================
    Normalize.scss settings
    ========================================================================== */
@@ -379,29 +366,3 @@ table {
 td,
 th {
   padding: 0; }
-Status API Training Shop Blog About Help
-© 2015 GitHub, Inc. Terms Privacy Security Contact
-Insuperable-Arete / cerberus
-master
- client
- html
- js
- styles
- style.css
- style.scss
- app.js
- server
- spec
- .gitattributes
- .gitignore
- .jshintrc
- .travis.yml
- CONTRIBUTING.md
- PRESS-RELEASE.md
- README.md
- STYLE-GUIDE.md
- _.editorconfig
- bower.json
- foobar.css
- gulpfile.js
- package.json
