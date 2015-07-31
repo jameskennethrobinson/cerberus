@@ -1,6 +1,10 @@
 .side-menu-tab(ng-show="sideMenu && isOnDetails" ng-class="detailsTab ? 'show-tab' : ''" ng-controller="DetailsTabController")
   .side-menu-tab-content
       span.glyphicon.glyphicon-remove(ng-click="toggleDetailsTab()")
+      h3.
+        Local Insight
+      p.
+       {{beachInfo.summary}}
     .row
       .col-md-3
         .circle.center

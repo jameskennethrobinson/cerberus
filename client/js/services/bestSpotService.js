@@ -100,7 +100,7 @@ angular.module('app.bestSpotService', [])
         });
 
         directionsDisplay.setMap(map);
-        $scope.$apply(function () {
+        $rootScope.$apply(function () {
           toggleSpinner();
           toggleRoute();
         })
