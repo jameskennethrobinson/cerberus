@@ -56,6 +56,7 @@ var iterativeApiCall = function(func, time){
   }
 };
 
+<<<<<<< HEAD
 var getTweetText = function(obj){
   return _.map(obj.statuses, function(tweet){
     return tweet.text;
@@ -96,6 +97,8 @@ var getTweetsAsync = Promise.promisify (function(beach, cb){
     })
 });
 
+=======
+>>>>>>> (refactor) removed tweet util
 var getMswDescriptionAsync = Promise.promisify (function(beach, cb){
   var url = 'http://magicseaweed.com/Playa-Linda-Surf-Guide/' + (beach.mswId).toString();
   requestPromise(url)
