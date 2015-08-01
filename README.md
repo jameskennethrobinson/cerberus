@@ -2,62 +2,57 @@
 
 [![Coverage Status](https://coveralls.io/repos/Insuperable-Arete/cerberus/badge.svg?branch=master&service=github)](https://coveralls.io/github/Insuperable-Arete/cerberus?branch=master)
 
-> Pithy project description
 
-## Team
 
+
+## Table of Contents
+
+1. [Team](#team)
+2. [Development](#development)
+3. [Usage](#Usage)
+4. [Requirements](#requirements)
+5. [Contributing](#contributing)
+
+
+
+1. ## Team
   - __Product Owner__: Justin Thareja
   - __Scrum Master__: Justin Fong
   - __Development Team Members__: Jake Seiden, James Robinson
 
-## Table of Contents
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
-    1. [Installing Dependencies](#installing-dependencies)
-    1. [Tasks](#tasks)
-1. [Team](#team)
-1. [Contributing](#contributing)
+2. ## Installing Dependencies
+	From within the root directory:
 
-## Usage
+	sudo npm install -g bower
+	npm install
+	bower install
 
-> Some usage instructions
 
-## Requirements
+3. ## Usage
 
-- AngularJS
-- D3.js
-- Underbar.js
-- Bootstrap
-- Node
-- Express
-- Mongoose
-- Mongo
+	1) See "Installing Dependencies"
+	2) Start 'worker.js' in './backend/worker' using 'node'. This command will populate the database with relevant beach/sruf data
+	3) In the root directory, input "gulp" into your terminal. The gulp file will run spec and initialize the front end application
+	4) Navitage to localhost:1337/
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
-- etc
+	To test the backend, navitage to ./backend/spec and run 'mocha' in your terminal
 
-## Development
+4. ## Requirements
 
-### Installing Dependencies
+	- npm
+	- bower
+	- gulp
+	- node
+	- express.js
+	- mocha
+	- chai
 
-From within the root directory:
+5. ## Roadmap
 
-```sh
-sudo npm install -g bower
-npm install
-bower install
-```
-
-### Roadmap
-
-View the project roadmap [here](https://github.com/Insuperable-Arete/cerberus/issues)
+	View the project roadmap [here](https://github.com/Insuperable-Arete/cerberus/issues)
 
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
+	See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
