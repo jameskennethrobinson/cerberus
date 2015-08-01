@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/style.css">
   </head>
   <body ng-controller="HomeController as home">
-    <div ng-attr-class="{{mapLoaded &amp;&amp; 'fadeOut' || 'overlay' }}" ng-hide="true">
+    <div ng-attr-class="{{mapLoaded &amp;&amp; 'fadeOut' || 'overlay' }}" ng-hide="animationFinished" class="overlay">
       <svg viewbox="0 0 600 300" class="svg-defs">
         <!-- Symbol with text-->
         <symbol id="s-text" ng-cloak>
@@ -108,7 +108,7 @@
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav">
                 <li><span ng-click="openSidebar()" ui-sref="default" class="navbar-text navbar-left glyphicon glyphicon-info-sign"></span></li>
-                <li><a ng-click="openSidebar()" ui-sref="overview">Overview</a></li>
+                <li><span ng-click="openSidebar()" ui-sref="overview" class="navbar-text navbar-left glyphicon glyphicon-list">         </span></li>
               </ul>
               <form ng-controller="TypeAheadController" ui-sref="details" ng-submit="onSubmit()" class="navbar-left navbar-form">
                 <div class="form-group">

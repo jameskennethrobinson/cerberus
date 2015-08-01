@@ -69,14 +69,14 @@ home.controller('HomeController', function($rootScope, $state, $scope, $modal, $
         $interval.cancel(decrementCounter);
       }
       //Time between each tick
-    }, 500);
+    }, 1000);
     $timeout(function() {
       $scope.mapLoaded = true;
       $timeout(function() {
         $scope.animationFinished = true;
       }, 2000);
       //Time to remove overlay
-    }, 5000);
+    }, 10000);
   };
 
   $scope.resetMap = function () {

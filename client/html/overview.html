@@ -1,10 +1,6 @@
 
-<div id="site-menu-content">
-  <h4>Where should I go? 
-    <rzslider rz-slider-model="distance" rz-slider-ceil="100" class="distance-slider"></rzslider>
-  </h4>
-  <button ng-click="getDirections()" class="btn btn-default">Get Directions!</button>
-  <h4>Browse Current Conditions </h4><span ng-click="closeSidebar()" class="glyphicon glyphicon-remove"></span><br/>
+<div id="site-menu-content"><span ng-click="closeSidebar()" class="glyphicon glyphicon-remove"></span>
+  <h4>Browse Current Conditions </h4><br/>
   <label>order by:</label>
   <select id="overviewSelect" ng-model="mySelect" ng-options="obj.value for obj in options"></select>
   <div ng-repeat="beach in beaches | orderBy: mySelect.option : true" ng-click="selectBeach(beach)" ui-sref="details" class="overviewEntryDiv">

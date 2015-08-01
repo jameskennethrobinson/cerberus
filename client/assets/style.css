@@ -415,6 +415,17 @@ span.glyphicon.glyphicon-search {
   span.glyphicon.glyphicon-search:hover {
     color: #FF80AB; }
 
+span.glyphicon.glyphicon-list {
+  margin: 15px;
+  color: white;
+  font-size: 20px; }
+  span.glyphicon.glyphicon-list:hover {
+    color: #FF80AB; }
+
+.navbar ul li {
+  height: 50px;
+  width: 50px; }
+
 .navbar-inverse .navbar-nav > li > a {
   color: white; }
 

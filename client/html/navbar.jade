@@ -12,10 +12,9 @@ nav.navbar.navbar-inverse
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         li
-          span.navbar-text.navbar-left(class="glyphicon glyphicon-info-sign" ng-click="openSidebar()" ui-sref="default")
+          span.navbar-text.navbar-left.glyphicon.glyphicon-info-sign(ng-click="openSidebar()" ui-sref="default")
         li
-          a(ng-click="openSidebar()" ui-sref="overview") Overview
-          
+          span.navbar-text.navbar-left.glyphicon.glyphicon-list(ng-click="openSidebar()" ui-sref="overview")          
       form.navbar-left.navbar-form(ng-controller="TypeAheadController" ui-sref="details" ng-submit="onSubmit()")
         .form-group
           input.form-control(type="text" ng-model="searchBeach" typeahead="beach for beach in beachChoices | filter:$viewValue" placeholder ="Search for a beach")
