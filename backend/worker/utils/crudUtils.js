@@ -6,11 +6,11 @@ var apiUtils = require('./apiUtils.js');
 var spotData = require('./json/beachData.json');
 var Promise = require('bluebird');
 
-var writeBeachEntry = Promise.promisify (function(beachData, cb){
-	Beach.find({mswId: beachData.mswId})
-		.then(function(beach){
-			if (beach.length === 0){
-				return new Beach({
+var writeBeachEntry = function(beachData) {
+	return new Promise (function (resolve, reject) {
+		Beach.find({mswId: beachData.mswId}).then(function(beach){
+			if (!beach.length) {
+				new Beach({
 					mswId: beachData.mswId,
 					beachname: beachData.beachName,
 					lat: beachData.lat,
@@ -18,39 +18,36 @@ var writeBeachEntry = Promise.promisify (function(beachData, cb){
 					description: 'this is a beach',
 					tweets: ['test'],
 					forecastData: ['test']
-				})
-			}
-		})
-		.then(function(newBeach){
-			console.log(newBeach.beachname, 'created');
-			return newBeach.save()
-		})
-		.then(function(err, success){
-			// console.log('run');
-			cb(success, err)
-		})
-		.catch(function(err){
-			console.log(err)
-		})
-})
+				}).save(function(err) {
+					if (err) {
+						reject(err);
+					}
+					resolve('save successfull');
+				});
+			} else {
+				reject(new Error('Beach already exists'));
+			} 
+		});
+	});
+};
 	
 exports.writeBeachEntries = function(cb){
 	var beachData = spotData;
 	(function recurse(ind){
-		console.log('writing spot #', ind);
+		console.log('executing item #', ind);
 		if (ind === beachData.length) {
 			cb('All entries written');
 			return;
 		}
 		writeBeachEntry(beachData[ind])
 			.then(function(success) {
-				console.log("success");
+				console.log(success);
 				recurse(++ind);
 			})
 			.catch(function(err) {
 				console.log(err)
 			})
-	})(0)
+	}).call(this,0);
 };
 
 exports.retrieveBeachData = function (cb) {
