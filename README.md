@@ -15,13 +15,13 @@
 
 
 
-1. ## Team
+## Team
   - __Product Owner__: Justin Thareja
   - __Scrum Master__: Justin Fong
   - __Development Team Members__: Jake Seiden, James Robinson
 
 
-2. ## Installing Dependencies
+ ## Installing Dependencies
 	From within the root directory:
 
 	sudo npm install -g bower
@@ -29,7 +29,7 @@
 	bower install
 
 
-3. ## Usage
+## Usage
 
 	1) See "Installing Dependencies"
 	2) Start 'worker.js' in './backend/worker' using 'node'. This command will populate the database with relevant beach/sruf data
@@ -38,7 +38,7 @@
 
 	To test the backend, navitage to ./backend/spec and run 'mocha' in your terminal
 
-4. ## Requirements
+## Requirements
 
 	- npm
 	- bower
@@ -48,7 +48,7 @@
 	- mocha
 	- chai
 
-5. ## Roadmap
+## Roadmap
 
 	View the project roadmap [here](https://github.com/Insuperable-Arete/cerberus/issues)
 
