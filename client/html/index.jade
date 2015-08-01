@@ -4,8 +4,8 @@ html(lang="en" ng-app="app")
     title Surf's Up
     include preload 
   body(ng-controller="HomeController as home")
-    //- div.overlay(ng-attr-class="{{mapLoaded && 'fadeOut' || 'overlay' }}" ng-hide="animationFinished")
-    div(ng-attr-class="{{mapLoaded && 'fadeOut' || 'overlay' }}" ng-hide="true")
+    //- div(ng-attr-class="{{mapLoaded && 'fadeOut' || 'overlay' }}" ng-hide="true")
+    div.overlay(ng-attr-class="{{mapLoaded && 'fadeOut' || 'overlay' }}" ng-hide="animationFinished")
       include loading 
     #site-wrapper(ng-class="sideMenu ? 'show-nav' : ''")
       #site-canvas

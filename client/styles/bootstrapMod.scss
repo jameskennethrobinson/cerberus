@@ -63,6 +63,19 @@ span.glyphicon.glyphicon-search {
     color: $accent-color-light;
   }
 }
+span.glyphicon.glyphicon-list {
+  margin: 15px;
+  color: white;
+  font-size: 20px;
+  &:hover {
+    color: $accent-color-light;
+  }
+}
+
+.navbar ul li {
+  height: 50px;
+  width: 50px;
+}
 
 .navbar-inverse .navbar-nav > li > a {
   color: white;
