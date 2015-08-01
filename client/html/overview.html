@@ -1,5 +1,9 @@
 
 <div id="site-menu-content">
+  <h4>Where should I go? 
+    <rzslider rz-slider-model="distance" rz-slider-ceil="100" class="distance-slider"></rzslider>
+  </h4>
+  <button ng-click="getDirections()" class="btn btn-default">Get Directions!</button>
   <h4>Browse Current Conditions </h4><span ng-click="closeSidebar()" class="glyphicon glyphicon-remove"></span><br/>
   <label>order by:</label>
   <select id="overviewSelect" ng-model="mySelect" ng-options="obj.value for obj in options"></select>
@@ -15,9 +19,9 @@
     <div> </div>
     <div ng-if="mySelect.value === 'wind chill'" class="overviewColumn2">{{beach.forecastData[0].wind.chill}}&deg</div>
     <div> </div>
-    <div ng-if="mySelect.value === 'swell height'" class="overviewColumn2">{{beach.forecastData[0].swell.components.primary.height}} ft.</div>
+    <div ng-if="mySelect.value === 'swell height'" class="overviewColumn2">{{beach.forecastData[0].swell.components.combined.height}} ft.</div>
     <div> </div>
-    <div ng-if="mySelect.value === 'swell period'" class="overviewColumn2">{{beach.forecastData[0].swell.components.primary.period}} ft.</div>
+    <div ng-if="mySelect.value === 'swell period'" class="overviewColumn2">{{beach.forecastData[0].swell.components.combined.period}} ft.</div>
     <div> </div>
   </div>
 </div>

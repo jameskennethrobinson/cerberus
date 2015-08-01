@@ -1,4 +1,8 @@
 #site-menu-content
+  h4
+    | Where should I go? 
+    rzslider(rz-slider-model="distance" class="distance-slider" rz-slider-ceil="100")
+  button.btn.btn-default(ng-click="getDirections()") Get Directions!
   h4 Browse Current Conditions 
   span(class="glyphicon glyphicon-remove" ng-click="closeSidebar()")
   br
@@ -27,8 +31,8 @@
       {{beach.forecastData[0].wind.chill}}&deg
     div  
     div(ng-if="mySelect.value === 'swell height'" class="overviewColumn2").
-      {{beach.forecastData[0].swell.components.primary.height}} ft.
+      {{beach.forecastData[0].swell.components.combined.height}} ft.
     div  
     div(ng-if="mySelect.value === 'swell period'" class="overviewColumn2").
-      {{beach.forecastData[0].swell.components.primary.period}} ft.
+      {{beach.forecastData[0].swell.components.combined.period}} ft.
     div 
