@@ -3,13 +3,14 @@ var cron = require('node-schedule');
 
 var apiUtils = require('./utils/apiUtils.js');
 var crudUtils = require('./utils/crudUtils.js');
+var data = require('./utils/json/beachData.json');
 
 var app = express();
 
 var bootTasks = [
-  crudUtils.writeBeachEntries, 
-  apiUtils.mswDescriptions, 
-  apiUtils.mswData, 
+  crudUtils.writeBeachEntries,
+  apiUtils.mswDescriptions,
+  apiUtils.mswData,
   apiUtils.updateBeachData
 ];
 
@@ -58,5 +59,6 @@ crudUtils.retrieveBeachData(function(results) {
 
 
 // app.get('/requestBeachData', apiUtils.beachDataReq);
+
 
 module.exports = app;
