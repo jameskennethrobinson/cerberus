@@ -22,8 +22,8 @@ var getMswAsync = Promise.promisify (function(beach, cb){
         return crudUtils.filterBeachDataTime(response)
       })
       .then(function(filtered){
-        console.log('Surf condition data written for beach #', beach.mswId)
-        return Beach.findOneAndUpdate({mswId: beach.mswId}, {forecastData: filtered})
+        console.log(filtered);
+        return Beach.findOneAndUpdate({mswId: beach.mswId, forecastData: filtered})
       })
       .then(function(err, success){
         cb(success, err)
@@ -105,8 +105,8 @@ var getMswDescriptionAsync = Promise.promisify (function(beach, cb){
       return $('.msw-s-desc').text();
     })
     .then(function(description){
-      console.log('Description wrote for beach #', beach.mswId)
-      return Beach.findOneAndUpdate({mswId: beach.mswId}, {description: description})
+      console.log(beach.mswId);
+      return Beach.findOneAndUpdate({mswId: beach.mswId, description: description})
     })
     .then(function(err, success){
       cb(success, err);
