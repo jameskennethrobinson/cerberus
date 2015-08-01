@@ -1,7 +1,7 @@
 angular.module('app.infoController', [])
-  .controller('InfoController', function($scope, AnimationService, d3Service) {
+  .controller('InfoController', function($scope, AnimationService, d3Service, BestSpotService, MapService) {
 
-    // import color scheme 
+    // import color scheme
     $scope.colors = AnimationService.colors;
 
     // draw an example wind vector
@@ -32,5 +32,8 @@ angular.module('app.infoController', [])
             .each('end', animatePath);
         }
       });
-      
+
+      $scope.getDirections = function () {
+        BestSpotService.getBestWavesFromCurrentLoc($scope.distance, MapService.getCurrentTimeIndex());
+      };
   });

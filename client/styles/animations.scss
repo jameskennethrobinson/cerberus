@@ -4,8 +4,8 @@
 }
 .circle {
   opacity: 0;
-  // background: linear-gradient(to bottom, #00bcd4 0%,#ff4081 100%);
-  background-color: #C7CCF7;
+  background: linear-gradient(to bottom, #00bcd4 0%,#ff4081 100%);
+  // background-color: #C7CCF7;
   border-radius: 100px;
   height: 175px;
   width: 175px;
@@ -162,7 +162,7 @@
 
 // Compass animation
 .compassPointer {
-  background: linear-gradient(to right, #ffffff 0%,#ffffff 49%,#ff0000 50%,#ff1a00 100%); /* W3C */
+  background: linear-gradient(to right, $primary-color 0%,$primary-color 49%,$accent-color 50%,$accent-color 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ff1a00',GradientType=1 );
   height: 7px;
   width: 115px;
@@ -178,7 +178,7 @@
   top: 63px;
 }
 g path {
-  stroke: #5B5BB7;
+  stroke: #00bcd4;
 }
 
 // * Compass animation

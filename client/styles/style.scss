@@ -59,7 +59,7 @@ html, body, #map {
 }
 
 rzslider {
-  margin: 20px 0 10px 0;
+  margin: 45px 0 10px 0;
 }
 
 rzslider.time-slider span.rz-bubble  {
@@ -120,7 +120,7 @@ li {
 
 a.mswPower {
   position: relative;
-  margin: 0 auto;
+  margin: 20px auto 0;
   & img {
     @extend a.mswPower;
   }
@@ -146,7 +146,7 @@ rzslider span.rz-pointer.rz-active:after {
 }
 
 #map .gm-style {
-  height: 95% !important;
+  height: 94% !important;
 }
 
 rzslider span.rz-bubble {

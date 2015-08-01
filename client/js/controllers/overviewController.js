@@ -29,7 +29,4 @@ overview.controller('OverviewController', function($scope, MapService, Animation
     return results;
   };
 
-  $scope.getDirections = function () {
-    BestSpotService.getBestWavesFromCurrentLoc($scope.distance, MapService.getCurrentTimeIndex());
-  };
 });

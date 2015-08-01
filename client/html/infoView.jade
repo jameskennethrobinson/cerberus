@@ -27,6 +27,12 @@
         a(href="http://www.surfline.com/surfology/surfology_forecast_index.cfm") Wave Energy, Decay and Direction
       li
         a(href="http://www.surfline.com/surfology/surfology_forecast_index.cfm?id=64446") Swell Periods
+  h3
+    | Where should I go? 
+  p
+    | You can spend all day analyzing forecast data but what you really want to do is get into the water. Let us do the work for you!
+    rzslider(rz-slider-model="distance" class="distance-slider" rz-slider-ceil="100")
+  button.btn.btn-default(ng-click="getDirections()") Get Directions!
 
   a.mswPower(href="http://magicseaweed.com")
     img(src="http://im-1-uk.msw.ms/msw_powered_by.png")
