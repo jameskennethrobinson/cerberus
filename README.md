@@ -21,7 +21,7 @@
   - __Development Team Members__: Jake Seiden, James Robinson
 
 
- ## Installing Dependencies
+## Installing Dependencies
 	From within the root directory:
 
 	sudo npm install -g bower
