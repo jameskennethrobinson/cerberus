@@ -21,7 +21,7 @@ $accent-color-light: #FF80AB;
   cursor: pointer;
 }
 
-html, body, #map{
+html, body, #map {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -81,7 +81,7 @@ rzslider.distance-slider span.rz-bubble.rz-limit {
 
 div.info-circle {
   margin: 17px 17px 0px 17px;
-  padding: 10px;
+  padding: 9px;
   height: 12px;
   width: 12px;
   border-radius: 22px;
@@ -147,4 +147,8 @@ rzslider span.rz-pointer.rz-active:after {
 
 #map .gm-style {
   height: 95% !important;
+}
+
+rzslider span.rz-bubble {
+  color: white;
 }

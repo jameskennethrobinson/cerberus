@@ -9,11 +9,6 @@ html(lang="en" ng-app="app")
       include loading 
     #site-wrapper(ng-class="sideMenu ? 'show-nav' : ''")
       #site-canvas
-        #site-tab(ng-class="bottomTab ? 'show-tab' : ''")
-          .tab-content(ng-show="bottomTab")
-            include tabView  
-        .tab-selector(ng-click="toggleTab()" ng-class="bottomTab ? 'show-tab' : ''").
-          Surf's Up!
         #site-menu(ng-class="sideMenu ? 'show-nav' : ''" ui-view)
         include sideTab
         include navbar

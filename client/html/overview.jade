@@ -1,4 +1,8 @@
 #site-menu-content
+  h4
+    | Where should I go? 
+    rzslider(rz-slider-model="distance" class="distance-slider" rz-slider-ceil="100")
+  button.btn.btn-default(ng-click="getDirections()") Get Directions!
   h4 Browse Current Conditions 
   span(class="glyphicon glyphicon-remove" ng-click="closeSidebar()")
   br

@@ -4,7 +4,7 @@ angular.module('app.mapService', [])
     var map;
     var beachCache;
     var currentBeach;
-    var currentTimeIndex;
+    var currentTimeIndex = 0;
     var currentTimeStamps;
     // beachInfo exposes only the properties needed by external controllers
     var beachInfo = {
@@ -39,7 +39,6 @@ angular.module('app.mapService', [])
         method: 'GET',
         url: 'http://localhost:1337/fetch'
       }).then(function (resp) {
-        console.log(resp.data);
         return resp.data;
       });
     };
@@ -126,6 +125,10 @@ angular.module('app.mapService', [])
       return false;
     };
 
+    var getCurrentTimeIndex = function() {
+      return currentTimeIndex;
+    }
+
     return {
       getBeachData: getBeachData,
       setMap: setMap,
@@ -140,6 +143,7 @@ angular.module('app.mapService', [])
       currentTimeIndex: currentTimeIndex,
       updateBeachInfo: updateBeachInfo,
       beachInfo: beachInfo,
-      isInBeachCache: isInBeachCache
+      isInBeachCache: isInBeachCache,
+      getCurrentTimeIndex: getCurrentTimeIndex
     };
   });

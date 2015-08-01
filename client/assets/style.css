@@ -381,7 +381,8 @@ th {
   box-shadow: 0px 5px 2px -1px rgba(0, 0, 0, 0.64);
   z-index: 5;
   border: none;
-  background-color: #00838F; }
+  background-color: #00838F;
+  min-height: 6%; }
 
 .navbar-inverse .navbar-text, .navbar-inverse .navbar-brand {
   color: white;
@@ -943,7 +944,7 @@ rzslider.distance-slider span.rz-bubble.rz-limit {
 
 div.info-circle {
   margin: 17px 17px 0px 17px;
-  padding: 10px;
+  padding: 9px;
   height: 12px;
   width: 12px;
   border-radius: 22px;
@@ -994,3 +995,6 @@ rzslider span.rz-pointer.rz-active:after {
 
 #map .gm-style {
   height: 95% !important; }
+
+rzslider span.rz-bubble {
+  color: white; }

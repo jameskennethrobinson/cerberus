@@ -1,6 +1,6 @@
 var overview = angular.module('app.overviewController', []);
 
-overview.controller('OverviewController', function($scope, MapService, AnimationService) {
+overview.controller('OverviewController', function($scope, MapService, AnimationService, BestSpotService) {
   $scope.beaches = MapService.getBeachCache();
   $scope.options = [
     {option: "beachname", value: "beach name"},
@@ -12,6 +12,7 @@ overview.controller('OverviewController', function($scope, MapService, Animation
     {option: "forecastData[0].swell.components.combined.height", value: "swell height"},
     {option: "forecastData[0].swell.components.combined.period", value: "swell period"}
   ];
+  $scope.mySelect = $scope.options[1];
   $scope.selectBeach = function(beach) {
     MapService.setCurrentBeach(beach.beachname);
     MapService.zoomToBeach(beach.beachname);
@@ -26,5 +27,9 @@ overview.controller('OverviewController', function($scope, MapService, Animation
       results.push(i);
     }
     return results;
+  };
+
+  $scope.getDirections = function () {
+    BestSpotService.getBestWavesFromCurrentLoc($scope.distance, MapService.getCurrentTimeIndex());
   };
 });

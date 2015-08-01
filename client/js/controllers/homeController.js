@@ -39,9 +39,6 @@ home.controller('HomeController', function($rootScope, $state, $scope, $modal, $
   $scope.toggleDetailsTab = function() {
     $scope.detailsTab = !$scope.detailsTab;
   }
-  $scope.getDirections = function () {
-    BestSpotService.getBestWavesFromCurrentLoc($scope.distance, MapService.getCurrentTimeStamp());
-  };
 
   $scope.toggleClass = function() {
     $scope.sideMenu = !$scope.sideMenu;

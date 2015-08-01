@@ -5,6 +5,7 @@ angular.module('app.bestSpotService', [])
       var directionsDisplay;
       var map;
       var directionsService = new google.maps.DirectionsService();
+      var currentSuggestion;
       var conditions = {
         processing: false,
         routeExists: false
@@ -50,7 +51,6 @@ angular.module('app.bestSpotService', [])
           }
 
           var destination = beachesWithinDistance.reduce(function(best, cur) {
-
             var bestSolidRating = best.forecastData[timeIndex].solidRating;
             var bestFadedRating = best.forecastData[timeIndex].fadedRating;
             var bestTotalStars = bestSolidRating + bestFadedRating;
@@ -70,7 +70,6 @@ angular.module('app.bestSpotService', [])
             }
             return bestTotalStars > curTotalStars ? best : cur;
           });
-          console.log('go slay some waves at', destination.beachname);
           renderPathToBeach(loc, destination.coords);
         });
       };
@@ -109,7 +108,7 @@ angular.module('app.bestSpotService', [])
 
       var renderPathToBeachFromCurrentLocation = function(beach) {
         toggleSpinner();
-  
+
         var destination = new google.maps.LatLng(beach.lat, beach.lon);
 
         if (navigator.geolocation) {
@@ -117,7 +116,7 @@ angular.module('app.bestSpotService', [])
             var pos = [position.coords.latitude, position.coords.longitude];
             var origin = new google.maps.LatLng(pos[0], pos[1]);
             renderPathToBeach(origin, destination);
-          }, function() { 
+          }, function() {
             handleNoGeolocation(true);
           });
         } else {

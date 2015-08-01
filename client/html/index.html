@@ -33,16 +33,6 @@
     </div>
     <div id="site-wrapper" ng-class="sideMenu ? 'show-nav' : ''">
       <div id="site-canvas">
-        <div id="site-tab" ng-class="bottomTab ? 'show-tab' : ''">
-          <div ng-show="bottomTab" class="tab-content">
-            <h3>
-              <p>Where should I go? </p>
-              <rzslider rz-slider-model="distance" rz-slider-ceil="100" class="distance-slider"></rzslider>
-            </h3>
-            <button ng-click="getDirections()">Get Directions!</button>
-          </div>
-        </div>
-        <div ng-click="toggleTab()" ng-class="bottomTab ? 'show-tab' : ''" class="tab-selector">Surf's Up!</div>
         <div id="site-menu" ng-class="sideMenu ? 'show-nav' : ''" ui-view></div>
         <div ng-show="sideMenu &amp;&amp; isOnDetails" ng-class="detailsTab ? 'show-tab' : ''" ng-controller="DetailsTabController" class="side-menu-tab">
           <div class="side-menu-tab-content"><span ng-click="toggleDetailsTab()" class="glyphicon glyphicon-remove"></span>
