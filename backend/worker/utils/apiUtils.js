@@ -34,12 +34,12 @@ var getMswAsync = Promise.promisify (function(beach, cb){
 });
 
 var iterativeApiCall = function(func, time){
-  return function(){
+  return function(cb){
     Beach.find({})
       .then(function(data){
         (function recurse(ind){
           if (ind === data.length){
-            console.log('Data for all beaches finished')
+            cb('Data for all beaches finished');
             return;
           } 
           func(data[ind])
@@ -49,7 +49,6 @@ var iterativeApiCall = function(func, time){
             })
             .catch(function(error){
               console.log(error);
-              //setTimeout ( function(){recurse(ind+1)}, time )
             })
         })(0)
       })
@@ -74,7 +73,6 @@ var getTweetAsync = Promise.promisify( function(lat, lon, cb){
   var geocode = lat + "," + lon + ",5mi";
 
   client.get('search/tweets', {q: 'surf', geocode: geocode}, function(error, tweets, response){
-    //console.log(tweets);
     cb(error, tweets)
   });
 
@@ -116,16 +114,24 @@ var getMswDescriptionAsync = Promise.promisify (function(beach, cb){
     })
 });
 
-
-
-exports.mswDescriptions = iterativeApiCall(getMswDescriptionAsync, 0);
-exports.mswData = iterativeApiCall(getMswAsync, 0);
+exports.mswDescriptions = function(cb) {
+  console.log('!!!!!mswDescriptions invoked!!!!!!');
+  iterativeApiCall(getMswDescriptionAsync, 0)(cb);
+};
+exports.mswData = function(cb) {
+  console.log('!!!!!mswData invoked!!!!!!');
+  iterativeApiCall(getMswAsync, 0)(cb);
+};
 exports.tweetData = iterativeApiCall(getTweetsAsync, 60100);
 
-exports.updateBeachData = function(){
+exports.updateBeachData = function(cb){
+  console.log('chron set...');
   var rule = new cron.RecurrenceRule();
   rule.hour = new cron.Range(0, 23, 3);
   cron.scheduleJob(rule, function(){
-    exports.beachDataReq();
+    console.log('chron invoked...');
+    exports.mswData(function(msg) {
+      cb(msg);
+    });
   });                                               
 };

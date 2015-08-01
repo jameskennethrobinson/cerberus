@@ -22,3 +22,6 @@ angular.module('app.googleMapController', [])
     });
 
   });
+
+
+  

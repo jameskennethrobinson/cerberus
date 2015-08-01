@@ -12,7 +12,8 @@ angular.module('app.mapService', [])
       name: null,
       time: null,
       lat: null,
-      lon: null
+      lon: null,
+      summary: null
     };
 
     var updateBeachInfo = function() {
@@ -29,6 +30,7 @@ angular.module('app.mapService', [])
       beachInfo.time = currentTimeStamps[currentTimeIndex];
       beachInfo.lat = currentBeach.lat;
       beachInfo.lon = currentBeach.lon;
+      beachInfo.summary = currentBeach.description;
     };
 
     var getBeachData = function() {
@@ -90,8 +92,9 @@ angular.module('app.mapService', [])
       var zoomMap = getMap();
       for(var i = 0; i < beachCache.length; i++){
         if(beachCache[i].beachname === beach){
-          targetCoordinates.lat = beachCache[i].lat;
-          targetCoordinates.lng = beachCache[i].lon;
+          // .142, -.122
+          targetCoordinates.lat = beachCache[i].lat - .142;
+          targetCoordinates.lng = beachCache[i].lon + .122;
         }
       }
       map.setCenter(targetCoordinates);

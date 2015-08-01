@@ -22,11 +22,11 @@ var writeBeachEntry = Promise.promisify (function(beachData, cb){
 			}
 		})
 		.then(function(newBeach){
-			console.log(newBeach);
+			console.log(newBeach.beachname, 'created');
 			return newBeach.save()
 		})
 		.then(function(err, success){
-			console.log('run');
+			// console.log('run');
 			cb(success, err)
 		})
 		.catch(function(err){
@@ -34,22 +34,23 @@ var writeBeachEntry = Promise.promisify (function(beachData, cb){
 		})
 })
 	
-exports.writeBeachEntries = function(beachData){
-		(function recurse(ind){
-			console.log(ind);
-			if (ind === beachData.length){
-				console.log('All entries written');
-				return;
-			}
-			writeBeachEntry(beachData[ind])
-				.then(function(success){
-					console.log("success");
-					recurse(++ind)
-				})
-				.catch(function(err){
-					console.log(err)
-				})
-		})(0)
+exports.writeBeachEntries = function(cb){
+	var beachData = spotData;
+	(function recurse(ind){
+		console.log('writing spot #', ind);
+		if (ind === beachData.length) {
+			cb('All entries written');
+			return;
+		}
+		writeBeachEntry(beachData[ind])
+			.then(function(success) {
+				console.log("success");
+				recurse(++ind);
+			})
+			.catch(function(err) {
+				console.log(err)
+			})
+	})(0)
 };
 
 exports.retrieveBeachData = function (cb) {
