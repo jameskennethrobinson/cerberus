@@ -56,7 +56,6 @@ var iterativeApiCall = function(func, time){
   }
 };
 
-
 var getMswDescriptionAsync = Promise.promisify (function(beach, cb){
   var url = 'http://magicseaweed.com/Playa-Linda-Surf-Guide/' + (beach.mswId).toString();
   requestPromise(url)
@@ -76,7 +75,6 @@ var getMswDescriptionAsync = Promise.promisify (function(beach, cb){
     })
 });
 
-<<<<<<< HEAD
 exports.mswDescriptions = function(cb) {
   console.log('!!!!!mswDescriptions invoked!!!!!!');
   iterativeApiCall(getMswDescriptionAsync, 0)(cb);
@@ -86,13 +84,7 @@ exports.mswData = function(cb) {
   iterativeApiCall(getMswAsync, 0)(cb);
 };
 exports.tweetData = iterativeApiCall(getTweetsAsync, 60100);
-=======
 
-
-exports.mswDescriptions = iterativeApiCall(getMswDescriptionAsync, 0);
-exports.mswData = iterativeApiCall(getMswAsync, 0);
-//exports.tweetData = iterativeApiCall(getTweetsAsync, 60100);
->>>>>>> my version
 
 exports.updateBeachData = function(cb){
   console.log('chron set...');
