@@ -6,9 +6,9 @@
   //- button.btn.btn-default(ng-click="getDirections()") Get Directions!
   h4 Browse Current Conditions 
   br
-  label order by:
+  label Sort By:
   //- select(ng-model="mySelect" ng-options="opt as opt for opt in options")
-  select(id="overviewSelect" ng-model="mySelect" ng-options="obj.value for obj in options")
+  select(class="form-control btn btn-primary dropdown-toggle" id="overviewSelect" ng-model="mySelect" ng-options="obj.value for obj in options")
   .overviewEntryDiv(ng-repeat="beach in beaches | orderBy: mySelect.option : true" ng-click="selectBeach(beach)"  ui-sref="details")
     div(class="overviewColumn1").
       {{beach.beachname}}

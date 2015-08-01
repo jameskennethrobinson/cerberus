@@ -170,7 +170,7 @@ angular.module('app.animationService', [])
               var lineWidth = '4';
               var maxAnimationDuration = 2000;
               var minAnimationDuration = 200;
-              var windSpeedMultiplier = findWindSpeedMultiplier(25, maxAnimationDuration, minAnimationDuration);
+              var windSpeedMultiplier = findWindSpeedMultiplier(30, maxAnimationDuration, minAnimationDuration);
 
               var windContainer = layer.selectAll('svg')
                   .data(d3.entries(beaches))

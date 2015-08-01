@@ -1,8 +1,8 @@
 
 <div id="site-menu-content"><span ng-click="closeSidebar()" class="glyphicon glyphicon-remove"></span>
   <h4>Browse Current Conditions </h4><br/>
-  <label>order by:</label>
-  <select id="overviewSelect" ng-model="mySelect" ng-options="obj.value for obj in options"></select>
+  <label>Sort By:</label>
+  <select id="overviewSelect" ng-model="mySelect" ng-options="obj.value for obj in options" class="form-control btn btn-primary dropdown-toggle"></select>
   <div ng-repeat="beach in beaches | orderBy: mySelect.option : true" ng-click="selectBeach(beach)" ui-sref="details" class="overviewEntryDiv">
     <div class="overviewColumn1">{{beach.beachname}}</div>
     <div> </div>
