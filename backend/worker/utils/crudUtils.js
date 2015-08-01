@@ -32,21 +32,7 @@ var writeBeachEntry = function(beachData) {
 	});
 };
 	
-				})
-			}
-		})
-		.then(function(newBeach){
-			console.log(newBeach.beachname, 'created');
-			return newBeach.save()
-		})
-		.then(function(err, success){
-			// console.log('run');
-			cb(success, err)
-		})
-		.catch(function(err){
-			console.log(err)
-		})
-})
+
 
 //async-map like util to iterate over beachData (used in conjunction with writeBeachEntry)
 exports.writeBeachEntries = function(cb){
