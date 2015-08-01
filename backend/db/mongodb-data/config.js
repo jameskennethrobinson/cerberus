@@ -1,8 +1,7 @@
 //nodem modules
 var mongoose = require('mongoose');
 //mongoose config
-mongoURI = 'mongodb://45.55.14.80:27017/thesis';
-mongoose.connect(mongoURI || 'mongodb://localhost/thesis');
+mongoose.connect('mongodb://localhost/thesis');
 
 
 //opens initial connection
