@@ -117,6 +117,15 @@ angular.module('app.mapService', [])
       updateBeachInfo();
     };
 
+    var isInBeachCache = function(beachName) {
+      for (var i = 0; i < beachCache.length; i++) {
+        if (beachCache[i].beachname === beachName) {
+          return true;
+        }
+      }
+      return false;
+    };
+
     return {
       getBeachData: getBeachData,
       setMap: setMap,
@@ -130,6 +139,7 @@ angular.module('app.mapService', [])
       currentBeach: currentBeach,
       currentTimeIndex: currentTimeIndex,
       updateBeachInfo: updateBeachInfo,
-      beachInfo: beachInfo
+      beachInfo: beachInfo,
+      isInBeachCache: isInBeachCache
     };
   });
