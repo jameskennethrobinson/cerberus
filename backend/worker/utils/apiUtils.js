@@ -83,7 +83,6 @@ exports.mswData = function(cb) {
   console.log('!!!!!mswData invoked!!!!!!');
   iterativeApiCall(getMswAsync, 0)(cb);
 };
-exports.tweetData = iterativeApiCall(getTweetsAsync, 60100);
 
 
 exports.updateBeachData = function(cb){
