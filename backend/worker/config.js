@@ -43,6 +43,7 @@ crudUtils.retrieveBeachData(function(results) {
   }
 });
 
+
 // enable the below function if you want to initially populate the database with scraped beaches
 // crudUtils.writeBeachEntries();
 

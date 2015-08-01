@@ -6,6 +6,7 @@ var apiUtils = require('./apiUtils.js');
 var spotData = require('./json/beachData.json');
 var Promise = require('bluebird');
 
+
 var writeBeachEntry = function(beachData) {
 	return new Promise (function (resolve, reject) {
 		Beach.find({mswId: beachData.mswId}).then(function(beach){
@@ -31,6 +32,9 @@ var writeBeachEntry = function(beachData) {
 	});
 };
 	
+
+
+//async-map like util to iterate over beachData (used in conjunction with writeBeachEntry)
 exports.writeBeachEntries = function(cb){
 	var beachData = spotData;
 	(function recurse(ind){
@@ -48,8 +52,11 @@ exports.writeBeachEntries = function(cb){
 				console.log(err)
 			})
 	}).call(this,0);
+
+
 };
 
+//API endpoints for retrieving beach data from Mongo
 exports.retrieveBeachData = function (cb) {
   Beach.find({})
   	.then(function(data){
@@ -57,6 +64,7 @@ exports.retrieveBeachData = function (cb) {
   	})
 };
 
+//filters beach JSON data into 24-hour period
 exports.filterBeachDataTime = function(data){
 	var parsedData = JSON.parse(data);
 	var time = Math.floor( (Date.now()/1000) );
