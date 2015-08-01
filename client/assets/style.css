@@ -422,10 +422,6 @@ span.glyphicon.glyphicon-list {
   span.glyphicon.glyphicon-list:hover {
     color: #FF80AB; }
 
-.navbar ul li {
-  height: 50px;
-  width: 50px; }
-
 .navbar-inverse .navbar-nav > li > a {
   color: white; }
 
@@ -606,11 +602,12 @@ html, body {
 
 .side-menu-tab {
   position: absolute;
-  background-color: cyan;
+  background-color: #00BCD4;
   width: 800px;
   left: -800px;
   bottom: 35px;
   z-index: 4;
+  padding: 0 25px;
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
@@ -629,7 +626,7 @@ html, body {
     bottom: 35px;
     left: 0;
     z-index: 4;
-    background-color: cyan;
+    background-color: #00BCD4;
     height: 30px;
     width: 60px;
     -webkit-transform: translateX(0);
@@ -715,7 +712,7 @@ h1 .glyphicon-remove {
 
 .circle, .cloud-1, .cloud-2, .cloud-3 {
   opacity: 0;
-  background-color: #C7CCF7;
+  background: linear-gradient(to bottom, #00bcd4 0%, #ff4081 100%);
   border-radius: 100px;
   height: 175px;
   width: 175px;
@@ -829,7 +826,7 @@ h1 .glyphicon-remove {
   -webkit-animation-direction: normal, reverse; }
 
 .compassPointer {
-  background: linear-gradient(to right, #ffffff 0%, #ffffff 49%, #ff0000 50%, #ff1a00 100%);
+  background: linear-gradient(to right, #00BCD4 0%, #00BCD4 49%, #FF4081 50%, #FF4081 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ff1a00',GradientType=1 );
   height: 7px;
@@ -846,7 +843,7 @@ h1 .glyphicon-remove {
   top: 63px; }
 
 g path {
-  stroke: #5B5BB7; }
+  stroke: #00bcd4; }
 
 @keyframes fadeIn {
   0% {
@@ -938,7 +935,7 @@ html, body, #map {
   font-family: 'Helvetica'; }
 
 rzslider {
-  margin: 20px 0 10px 0; }
+  margin: 45px 0 10px 0; }
 
 rzslider.time-slider span.rz-bubble {
   font-size: 0; }
@@ -988,7 +985,7 @@ li {
 
 a.mswPower, a.mswPower img {
   position: relative;
-  margin: 0 auto; }
+  margin: 20px auto 0; }
 
 a {
   color: #FF4081; }
@@ -1005,7 +1002,7 @@ rzslider span.rz-pointer.rz-active:after {
   background-color: #C51162; }
 
 #map .gm-style {
-  height: 95% !important; }
+  height: 94% !important; }
 
 rzslider span.rz-bubble {
   color: white; }

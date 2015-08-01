@@ -46,10 +46,10 @@ tab.controller('DetailsTabController', function($scope, MapService) {
     }
     var className = "path" + specifier;
 
-    if ($scope.swellPeriod >= 10) {
+    if ($scope.swellPeriod >= 4) {
       className += "-fast";
     }
-    if ($scope.swellPeriod <= 4) {
+    if ($scope.swellPeriod <= 10) {
       className += "-slow"
     }
 

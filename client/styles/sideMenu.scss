@@ -102,11 +102,12 @@
 .side-menu- {
   &tab {
     position: absolute;
-    background-color: cyan;
+    background-color: $primary-color;
     width: 800px;
     left: -800px;
     bottom: 35px;
     z-index: 4;
+    padding: 0 25px;
     @include translate-x(0);
     transition: .3s ease all;
     border-top-right-radius: 5px;
@@ -120,7 +121,7 @@
       bottom: 35px;
       left: 0;
       z-index: 4;
-      background-color: cyan;
+      background-color: $primary-color;
       height: 30px;
       width: 60px;
       @include translate-x(0);
